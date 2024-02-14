@@ -18,7 +18,7 @@ const gameSocket = require('./socket/index');
 const app = express();
 
 // Config Express-Middleware
-configureMiddleware(app);
+//configureMiddleware(app);
 
 // Set-up Routes
 configureRoutes(app);
@@ -31,16 +31,16 @@ const server = app.listen(config.PORT, () => {
 });
 
 //  Handle real-time poker game logic with socket.io
-const io = socketio(server);
+//const io = socketio(server);
 
-io.on('connect', (socket) => gameSocket.init(socket, io));
+//io.on('connect', (socket) => gameSocket.init(socket, io));
 
 // Error handling - close server
-process.on('unhandledRejection', (err) => {
-  // db.disconnect();
-
-  console.error(`Error: ${err.message}`);
-  server.close(() => {
-    process.exit(1);
-  });
-});
+// process.on('unhandledRejection', (err) => {
+//   // db.disconnect();
+//
+//   console.error(`Error: ${err.message}`);
+//   server.close(() => {
+//     process.exit(1);
+//   });
+// });
